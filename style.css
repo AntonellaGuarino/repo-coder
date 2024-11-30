@@ -14,47 +14,77 @@ body {
 
 
 /*----------------------------------------- Estilos de la barra de navegación */
-header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 10;
+
+.navbar-custom {
+  background-color: black;
+  padding: 10px 10px;
+  position: fixed;
 }
 
-.navbar{
-justify-content: center;
+.navbar-brand {
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-.navbar ul {
+.nav-link {
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 5px;
+}
 
-  display: flex;
-  list-style-type:none;
+.navbar-brand:hover {
+  background-color: white;
+  width: 50px;
+}
+
+
+.nav-link:hover {
+  color:chartreuse;
+  text-decoration: underline;
+}
+
+
+
+/* ------------------------------ Texto fijo a la izquierda y Botón a la derecha */
+.btn {
+  position: fixed; /* Fija el párrafo en la pantalla */
+  right: 20px; 
+  top: 70%; 
+  font-size: 18px;
   padding: 20px;
-}
-
-.navbar ul li {
-  margin: 0 15px;
-}
-
-.navbar ul li a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
-  font-weight:bolder;
-  transition: color 0.3s;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar ul li a:hover {
-  color:chartreuse;
+.btn:hover {
+  background-color: rgb(45, 156, 69);
+  color:white;
+  opacity: 50;
+}
+
+.texto-fijo{
+  position: fixed;
+  left: 20px; 
+  top: 50%;
+  font-size: 20px; 
+  color: white;
+  padding: 10px; 
 }
 
 
 
-/* -------------------------------------- Sección Fotos (Pantalla Completa) */
+/* -------------------------------------- Sección Foto PRINCIPAL de la pagina */
 
 .fondo1 {
   height: 100vh;
-  background-image: url(/Imagenes/tubes2.jpg);
+  background-image: url(Imagenes/tubes2.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -71,7 +101,7 @@ justify-content: center;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Capa de superposición oscura */
+  background: rgba(0, 0, 0, 0.5); 
   z-index: 1;
 }
 
@@ -96,14 +126,14 @@ justify-content: center;
 
 
 
-/*_--------------------------- video */
-/* Contenedor del video */
+/*-------------------------- video Youtube */
+
 .video-index {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw; /* 100% del ancho de la ventana */
-  height: 100vh; /* 100% de la altura de la ventana */
+  width: 100%;
+  height: 100vh;
 }
 
 .video-index iframe {
@@ -122,103 +152,101 @@ justify-content: center;
   }
 }
 
-/*------------------------- QUIENES SOMOS */
 
-.quienes-somos {
-  color:#333;
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
+
+
+
+/* -------------------------------- seccion de 3 fotos */
+
+.section {
+  height: 100vh;
+  background-image: url(Imagenes/byn.jpg);
+  background-size:cover;
+  background-position: center; 
 }
 
-/* Título principal */
-.textito {
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  text-align: center;
+
+.section2 {
+  height: 100vh;
+  background-image: url(Imagenes/parrafo2.jpg);
+  background-size:cover;
+  background-position: center;
+
 }
 
-/* Texto de la publicación */
-.textito2 {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin: 20px 0;
+.section3 {
+  height: 100vh;
+  background-image: url(Imagenes/byn22.jpg);
+  background-size:cover;
+  background-position: center;
+
 }
 
-/* Resaltado de texto */
-.highlight {
-  background-color: yellow;
-  padding: 2px 4px;
+
+/* --------------------------- Estilos para el texto de la primer foto */
+
+.container {
+  background: none;
+  padding: 200px;
 }
 
-/* Barra de navegación o título secundario */
-.navbar-title {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  text-align: center;
+.container p {
+  color: white; 
+  text-shadow: 2px 2px 4px rgba(23, 180, 63, 0.7);
 }
 
-.pagination {
+@media (max-width: 768px) {
+.section, .section2, .section3 {
+height: 100vh;  }
+}
+
+.container {
+padding: 20px; 
+}
+
+
+
+
+
+
+
+
+
+/*------------------------- QUIENES SOMOS - Falta terminar O MEJORAR esto */
+
+
+
+.conteiner4 {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination span {
-  background-color: #ddd;
-  margin: 0 5px;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-/* Estilo para el scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #aaa;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f4f4f4;
-}
-
-
-
-
-/* ------------------------------ Texto fijo a la izquierda y Botón a la derecha */
-.btn {
-  position: fixed; /* Fija el párrafo en la pantalla */
-  right: 20px; 
-  top: 70%; 
-  font-size: 18px;
+  justify-content: space-between;
+  background-color: #000;
+  color: #fff; 
+  height: 100vh; 
   padding: 20px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  
+  
+align-items: flex-end;
 }
 
-.btn:hover {
-  background-color: rgb(45, 156, 69);
-  color:white;
-  opacity: 50;
+.conteiner--text {
+  max-width: 40%;
 }
 
-.texto-fijo{
-  position: fixed; /* Fija el párrafo en la pantalla */
-  left: 20px; 
-  top: 50%; /* Pone el párrafo a la mitad de la pantalla */
-  font-size: 20px; 
-  color: white;
-  padding: 10px; 
+.conteiner--text h1 {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 100px;
+}
+
+.conteiner--text p {
+  left: 50%;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 
-/*----------------------------------------imganes- columnas*/
+
+/*----------------------------------------imganes- columnas al final */
 
 .imagenes {
   background-color:black;
@@ -241,8 +269,8 @@ justify-content: center;
 .grid-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ajusta la imagen sin distorsionar */
-  transition: transform 0.3s; /* Transición para el efecto de zoom */
+  object-fit: cover;
+  transition: transform 0.3s;
 }
 
 
@@ -252,26 +280,12 @@ justify-content: center;
 
 
 /*-------------------------------------------------*MQUERY*/
-/*listado de fotos*/
 
 @media (max-width: 600px) {
   .imagenes {
       grid-template-columns: repeat(2, 1fr); 
-      gap: 5px; /* Menos espacio entre imágenes */
+      gap: 5px;
       padding: 5px; 
-  }
-
-  .grid-img img {
-      transition: transform 0.3s; /* Animación más rápida en móviles */
-  }
-}
-
-/* pantalla entre 600px y 1024px */
-@media (min-width: 600px) and (max-width: 1024px) {
-  .imagenes {
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas en tabletas */
-      gap: 10px; /* Espacio moderado entre imágenes */
-      padding: 10px; /* Margen moderado alrededor */
   }
 
   .grid-img img {
@@ -279,39 +293,12 @@ justify-content: center;
   }
 }
 
-/* Escritorio: pantalla de más de 1024px */
-@media (min-width: 1024px) {
-  .imagenes {
-      grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
-      gap: 15px; /* Más espacio entre imágenes */
-      padding: 20px; /* Mayor margen alrededor */
-  }
 
-  .grid-img img {
-      transition: transform 0.3s; /* Animación estándar */
-  }
-}
-
-/* foto del parrafo suelto */
-
-@media (max-width: 600px) {
-  .imagenes {
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 5px; /* Menos espacio entre imágenes */
-      padding: 5px; 
-  }
-
-  .grid-img img {
-      transition: transform 0.3s; /* Animación más rápida en móviles */
-  }
-}
-
-/* pantalla entre 600px y 1024px */
 @media (min-width: 600px) and (max-width: 1024px) {
   .imagenes {
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas en tabletas */
-      gap: 10px; /* Espacio moderado entre imágenes */
-      padding: 10px; /* Margen moderado alrededor */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
   }
 
   .grid-img img {
@@ -319,10 +306,49 @@ justify-content: center;
   }
 }
 
-/* Escritorio: pantalla de más de 1024px */
+
 @media (min-width: 1024px) {
   .imagenes {
-      grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 20px;
+  }
+
+  .grid-img img {
+      transition: transform 0.3s;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .imagenes {
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 5px;
+      padding: 5px; 
+  }
+
+  .grid-img img {
+      transition: transform 0.3s;
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .imagenes {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+  }
+
+  .grid-img img {
+      transition: transform 0.3s;
+  }
+}
+
+@media (min-width: 1024px) {
+  .imagenes {
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px; 
       padding: 20px; 
   }
@@ -337,164 +363,140 @@ justify-content: center;
 
 
 
-/* -------------------------------- seccion  */
-
-.section {
-  height: 200vh;
-  background-image: url(/Imagenes/byn.jpg);
-  background-size:cover; /* La imagen cubre todo el área */
-  background-position: center; 
-}
+/* -------------------------------- ----------------seccion GUITARRAS------------------------------  */
 
 
-.section2 {
-  height: 200vh;
-  background-image: url(/Imagenes/parrafo2.jpg);
-  background-size:cover; /* La imagen cubre todo el área */
-
-}
-
-.section3 {
-  height: 200vh;
-  background-image: url(/Imagenes/byn22.jpg);
-  background-size:cover; /* La imagen cubre todo el área */
-
-}
+/* INTRO */
 
 
-/* ---------------------------------------------- Estilos para el texto */
-.container {
-  background: none;
-  padding: 200px;
-}
-
-.container p {
-  color: white; 
-  text-shadow: 2px 2px 4px rgba(23, 180, 63, 0.7);
-}
-
-
-
-
-
-
-/* ------- 
---------------- S E C C I O N - -  GUITARRAS --------------*/
-
-/* Estilo foto portada  */
-
-.fondo2 {
-  height: 100vh;
-  background-image: url(/Imagenes/ran1.jpg);
-  background-size: cover;
-  background-position: center;
+.intro-guitarras {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
-
-/* -------------------- seccion de venta */
-
-
-.guitarras-venta {
-  padding: 2rem;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.guitar-venta h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-/* Contenedor Grid */
-
-.guitarras-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 1.5rem; /* Espacio entre tarjetas */
-  margin-top: 2rem;
-}
-
-
-
-/* Tarjetas individuales */
-
-.guitarra-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.guitarra-card img {
-  width: 100%;
+.intro-gtr-imagen img {
+  max-width: 300px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.guitarra-card h3 {
-  font-size: 1.2rem;
-  color: #555;
-  margin: 0.5rem 0;
+.intro-gtr-texto {
+  flex: 1;
+  margin-left: 20px;
+  text-align: left;
 }
 
-.guitarra-card p {
-  font-size: 1rem;
-  color: #000;
-  margin: 0.5rem 0;
+.intro-gtr-texto h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.guitarra-card button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.guitarra-card button:hover {
-  background-color: #0056b3;
+.intro-gtr-texto p {
+  font-size: 1.2em;
+  color: #666;
+  line-height: 1.5;
 }
 
 
 
 @media (max-width: 768px) {
-  .guitarras-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  .guitarras-grid {
-    grid-template-columns: 1fr; /* 1 columna en móviles */
+  .intro-gtr-texto h1 {
+    font-size: 2vw; /* Texto más grande en móviles */
+    padding: 5px;
   }
 }
 
 
 
-.volver-inicio {
-  position: fixed; /* Fija el párrafo en la pantalla */
-  right: 20px; 
-  top: 5%; 
-  font-size: 18px;
-  padding: 20px;
+
+/* --------- GALERIA DE FOTOS EN VENTA ----------  */
+
+
+.gtr-galeria {
+  margin-top: 3%;
+  background-color: black;
+  display: grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+.gtr-item {
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+
+.gtr-item img {
+  width: 100%; 
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+
+.gtr-item:hover img {
+  transform: scale(1.1);
+}
+
+.gtr-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+}
+
+.gtr-item:hover .gtr-overlay {
+  opacity: 1;
+}
+
+/* Botón dentro de la placa */
+.gtr-overlay button {
+  background-color: #000000; 
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.volver-inicio:hover {
-  background-color: rgb(45, 156, 69);
-  color:white;
-  opacity: 50;
+
+.gtr-overlay button:hover {
+  color: #333;
+  background-color:chartreuse;
+}
+
+@media (max-width: 768px) {
+  .gtr-galeria {
+    grid-template-columns: 1fr 1fr;
+
+  }
+}
+
+
+
+
+/* -------- quienes somos- No esta terminado ! */
+
+.btn2 {
+  width: 100%;
+  left: 0;
+  font-size: 1.2rem;
+  border-radius: 0;
 }
